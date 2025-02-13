@@ -1,0 +1,18 @@
+@import "../../globals";
+
+.card {
+    display: grid;
+    background-color: $color-light;
+
+    &.card-default {
+        justify-content: center;
+        align-content: center;
+
+        &:hover {
+            background-color: $color-highlight;
+        }
+    }
+
+    &.card-border {
+    }
+}

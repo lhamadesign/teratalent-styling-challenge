@@ -1,0 +1,57 @@
+@import "../../reset";
+
+$min-width: 768px;
+$max-width: 1680px;
+$max-height: 1014px;
+
+.firm-facts__container {
+    margin-top: 100px;
+    background-color: rgba(45, 62, 78, 1);
+    min-width: $min-width;
+    max-width: $max-width;
+    max-height: $max-height;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    .close-button {
+        @include clean-button();
+        
+        width: 44px; //todo: scale responsive
+        height: 44px;
+        margin-top: 50px;
+        margin-right: 63px;
+        align-self: flex-end;
+
+        &:active {
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .close-button__icon {
+            flex: 1;
+        }
+    }
+
+    .title {
+        font: {
+            weight: "400";
+            size: 60px; // todo: scale responsive
+        }
+        color: $color-light;
+        line-height: 66px;
+        letter-spacing: 0;
+        margin: 33px 0px 0px 70px;
+    }
+
+    .content-grid {
+        margin-top: 22px;
+        border-top: solid 1px transparentize($color-light, 0.8);
+        display: grid;
+        height: 300px;
+        align-self: center;
+        width: 80%;
+    }
+}
