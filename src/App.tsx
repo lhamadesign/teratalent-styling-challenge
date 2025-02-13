@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <FirmFacts />
-      <FirmFactCard variation="border" />
+      <FirmFactCard variant="border" />
     </>
   )
 }

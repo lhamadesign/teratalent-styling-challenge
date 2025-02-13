@@ -1,26 +1,16 @@
+import Button from "../Button/Button"
 import "./FirmFactCard.scss"
 
 interface FirmFactCardProps {
-  variation: "default" | "border"
+  variant: "default" | "border"
 }
 
 const FirmFactCard = (props: FirmFactCardProps) => {
-  const variation = props.variation
+  const variation = props.variant
 
   return (
     <div className={`card card-${variation}`}>
-      <div
-        style={{
-          display: "flex",
-          gap: "8px",
-          justifyContent: "space-around",
-          alignItems: "center",
-          width: "300px",
-        }}
-      >
-        <img src="../../public/search-icon.svg" />
-        <span>fsjigb osng sjogdn dojfnsdofjsn</span>
-      </div>
+      <Button variant="default" />
     </div>
   )
 }
