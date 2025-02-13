@@ -11,6 +11,8 @@ const FirmFactCard = (props: FirmFactCardProps) => {
   return (
     <div className={`card card-${variation}`}>
       <Button variant="default" />
+      <Button variant="icon" />
+      <Button variant="default" disabled />
     </div>
   )
 }

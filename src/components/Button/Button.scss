@@ -1,38 +1,70 @@
 @import "../../reset";
 
 .button {
-    max-width: 310px;
+    width: 310px;
+    height: 70px;
     border-radius: 70px;
-    padding: 23px 33px;
+    padding: 0px 30px;
     background-color: $color-primary;
     color: $color-light;
-    display: flex;
+    display: block;
     position: relative;
-
-    &:hover {
-        background-color: $color-highlight;
-        border: solid 2px $color-light;
-    }
+    overflow: hidden;
 
     &:disabled {
         cursor: not-allowed;
         background-color: $color-disabled;
+        border: none;
     }
-    
+
+    &:not(:disabled):hover {
+        background-color: $color-highlight;
+        border: solid 2px $color-light;
+    }
 
     .button__text {
-        display: inline-block;
-        overflow: hidden;
-        text-overflow: clip;
-        white-space: nowrap;
-        width: 100%;
-        flex: 1;
         font: {
             size: 19px;
             weight: 600;
         }
         letter-spacing: -0.5px;
         line-height: 24px;
+        overflow: hidden;
     }
+}
 
+.button__default {
+    .button__text {
+        display: inline-block;
+        text-overflow: clip;
+        white-space: nowrap;
+        width: 100%;
+        flex: 1;
+    }
+}
+
+.button__icon {
+    .button__grid {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 16px;
+        align-items: center;
+        overflow: hidden;
+        height: 48px;
+
+        .icon {
+            display: flex;
+            place-items: center;
+        }
+
+        .button__text {
+            overflow: hidden;
+            white-space: wrap;
+            text-overflow: ellipsis;
+            height: 100%;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+    }
 }
