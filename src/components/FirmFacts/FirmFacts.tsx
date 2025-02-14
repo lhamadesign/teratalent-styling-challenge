@@ -1,8 +1,19 @@
+import { JSX, useState } from "react"
 import Button from "../Button/Button"
 import FirmFactCard from "../FirmFactCard/FirmFactCard"
 import "./FirmFacts.scss"
 
 const FirmFacts = () => {
+  const buttonsToRender: JSX.Element[] = [
+    <Button variant="icon" />,
+    <Button variant="icon" />,
+    <Button variant="default" />,
+    <Button variant="icon" />,
+    <Button variant="icon" />,
+    <Button variant="icon" />,
+    <Button variant="icon" />,
+  ]
+
   return (
     <div className="firm-facts__container">
       <button type="button" className="close-button">
@@ -11,27 +22,13 @@ const FirmFacts = () => {
 
       <h1 className="title">Firm Facts</h1>
       <section className="content-grid">
-        <FirmFactCard variant="default">
-          <Button variant="icon" />
-        </FirmFactCard>
-        <FirmFactCard variant="default">
-          <Button variant="icon" />
-        </FirmFactCard>
-        <FirmFactCard variant="default">
-          <Button variant="default" />
-        </FirmFactCard>
-        <FirmFactCard variant="default">
-          <Button variant="icon" />
-        </FirmFactCard>
-        <FirmFactCard variant="border">
-          <Button variant="icon" />
-        </FirmFactCard>
-        <FirmFactCard variant="border">
-          <Button variant="icon" disabled />
-        </FirmFactCard>
-        <FirmFactCard variant="border">
-          <Button variant="icon" />
-        </FirmFactCard>
+        {buttonsToRender.map((button, index) => {
+          return (
+            <FirmFactCard variant={index > 3 ? "border" : "default"}>
+              {button}
+            </FirmFactCard>
+          )
+        })}
       </section>
     </div>
   )

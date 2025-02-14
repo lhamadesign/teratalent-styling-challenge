@@ -110,3 +110,8 @@
         }
     }
 }
+
+.card:hover > .button {
+    background-color: $color-highlight;
+    border: solid 2px $color-light;
+}
