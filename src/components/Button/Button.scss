@@ -1,15 +1,23 @@
 @import "../../reset";
+@import "./Responsiveness";
 
 .button {
-    width: 310px;
-    height: 70px;
+    max-width: $button-max-width;
+    max-height: $button-max-height;
+    min-width: $button-min-width;
+    min-height: $button-min-height;
+    width: $button-responsive-width;
+    height: $button-responsive-height;
     border-radius: 70px;
-    padding: 0px 30px;
+    padding-left: $button-responsive-left-padding;
+    padding-right: $button-responsive-right-padding;
     background-color: $color-primary;
     color: $color-light;
-    display: block;
-    position: relative;
+    display: flex;
+    align-items: center;
     overflow: hidden;
+    box-shadow: none;
+    border: solid 2px transparent;
 
     &:disabled {
         cursor: not-allowed;
@@ -24,12 +32,22 @@
 
     .button__text {
         font: {
-            size: 19px;
-            weight: 600;
+            size: $button-responsive-font-size;
         }
+        font-weight: 600;
+        line-height: $button-responsive-line-height;
         letter-spacing: -0.5px;
-        line-height: 24px;
         overflow: hidden;
+
+        @media (max-width: 768px) {
+            font-size: $button-min-font-size;
+            line-height: $button-min-line-height;
+        }
+
+        @media (min-width: 1680px) {
+            font-size: $button-max-font-size;
+            line-height: $button-max-line-height;
+        }
     }
 }
 
@@ -45,26 +63,47 @@
 
 .button__icon {
     .button__grid {
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: 16px;
+        display: flex;
+        flex-direction: row;
+        gap: $button-grid-responsive-gap-size;
         align-items: center;
         overflow: hidden;
-        height: 48px;
 
         .icon {
             display: flex;
             place-items: center;
+
+            > img {
+                width: $icon-responsive-size;
+                height: $icon-responsive-size;
+
+                min-width: $icon-min-size;
+                max-width: $icon-max-size;
+                min-height: $icon-min-size;
+                max-height: $icon-max-size;
+            }
         }
 
         .button__text {
             overflow: hidden;
             white-space: wrap;
-            text-overflow: ellipsis;
+            text: {
+                overflow: ellipsis;
+                align: left;
+            }
             height: 100%;
+            width: 100%;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+        }
+
+        @media (max-width: 768px) {
+            gap: $button-grid-min-gap-size;
+        }
+
+        @media (min-width: 1680px) {
+            gap: $button-grid-max-gap-size;
         }
     }
 }

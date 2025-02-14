@@ -1,0 +1,59 @@
+$min-width: 768px;
+$max-width: 1680px;
+$max-height: 1014px;
+
+// Calculating responsive gap size between cards
+$grid-min-gap-size: 8.23px;
+$grid-max-gap-size: 18px;
+$min-gap-size-num: 8.23;
+$max-gap-size-num: 18;
+$grid-gap-size-proportion: calc(($max-gap-size-num - $min-gap-size-num) * $screen-size-proportion);
+
+$grid-responsive-gap-size: calc($grid-min-gap-size + $grid-gap-size-proportion);
+
+// Calculating responsive content grid widths and heights
+$content-grid-min-height: 302.63px;
+$content-grid-max-height: 662px;
+$min-height-num: 302.63;
+$max-height-num: 662;
+$content-grid-height-proportion: calc(($max-height-num - $min-height-num) * $screen-size-proportion);
+
+$content-grid-min-width: 690.29px;
+$content-grid-max-width: 1510px;
+$min-width-num: 690.29;
+$max-width-num: 1510;
+$content-grid-width-proportion: calc(($max-width-num - $min-width-num) * $screen-size-proportion);
+
+$content-grid-responsive-height: calc($content-grid-min-height + $content-grid-height-proportion);
+$content-grid-responsive-width: calc($content-grid-min-width + $content-grid-width-proportion);
+
+// Calculating Close Icon responsive sizes
+$close-icon-min-size: 20.11px;
+$close-icon-max-size: 44px;
+$icon-min-size-num: 20.11;
+$icon-max-size-num: 44;
+
+$close-icon-size-proportion: calc(($icon-max-size-num - $icon-min-size-num) * $screen-size-proportion);
+
+$close-icon-responsive-size: calc($close-icon-min-size + $close-icon-size-proportion);
+
+// Calculating responsive margins on close icon
+$close-icon-min-top-margin: 22.86px;
+$close-icon-max-top-margin: 50px;
+$icon-min-top-margin-num: 22.86;
+$icon-max-top-margin-num: 50;
+$close-icon-top-margin-proportion: calc(
+    ($icon-max-top-margin-num - $icon-min-top-margin-num) * $screen-size-proportion
+);
+
+$close-icon-responsive-top-margin: calc($close-icon-min-top-margin + $close-icon-top-margin-proportion);
+
+$close-icon-min-right-margin: 28.8px;
+$close-icon-max-right-margin: 63px;
+$icon-min-right-margin-num: 28.8;
+$icon-max-right-margin-num: 63;
+$close-icon-right-margin-proportion: calc(
+    ($icon-max-right-margin-num - $icon-min-right-margin-num) * $screen-size-proportion
+);
+
+$close-icon-responsive-right-margin: calc($close-icon-min-right-margin + $close-icon-right-margin-proportion);

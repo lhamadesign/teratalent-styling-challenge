@@ -1,37 +1,53 @@
+@use "sass:color";
 @import "../../reset";
-
-$min-width: 768px;
-$max-width: 1680px;
-$max-height: 1014px;
+@import "./Responsiveness";
 
 .firm-facts__container {
-    margin-top: 100px;
-    background-color: rgba(45, 62, 78, 1);
     min-width: $min-width;
     max-width: $max-width;
-    max-height: $max-height;
     height: auto;
+
+    margin-top: 100px;
+    background-color: rgba(45, 62, 78, 1);
+    padding-bottom: 80px;
 
     display: flex;
     flex-direction: column;
+    width: 100%;
     position: relative;
 
     .close-button {
         @include clean-button();
-        
-        width: 44px; //todo: scale responsive
-        height: 44px;
-        margin-top: 50px;
-        margin-right: 63px;
+        margin-top: $close-icon-responsive-top-margin;
+        margin-right: $close-icon-responsive-right-margin;
         align-self: flex-end;
+
+        > img {
+            width: $close-icon-responsive-size;
+            height: $close-icon-responsive-size;
+            min-width: $close-icon-min-size;
+            max-width: $close-icon-max-size;
+            min-height: $close-icon-min-size;
+            max-height: $close-icon-max-size;
+        }
 
         &:active {
             outline: none;
             box-shadow: none;
         }
-        
+
         .close-button__icon {
             flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            margin-top: $close-icon-min-top-margin;
+            margin-right: $close-icon-min-right-margin;
+        }
+
+        @media (min-width: 1680px) {
+            margin-top: $close-icon-max-top-margin;
+            margin-right: $close-icon-max-right-margin;
         }
     }
 
@@ -47,11 +63,36 @@ $max-height: 1014px;
     }
 
     .content-grid {
+        min-width: $content-grid-min-width;
+        max-width: $content-grid-max-width;
+        min-height: $content-grid-min-height;
+        max-height: $content-grid-max-height;
+        width: $content-grid-responsive-width;
+        height: $content-grid-responsive-height;
         margin-top: 22px;
-        border-top: solid 1px transparentize($color-light, 0.8);
-        display: grid;
-        height: 300px;
+
+        border-top: solid 1px color.adjust($color-light, $alpha: -0.8);
         align-self: center;
-        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: $grid-responsive-gap-size;
+
+        @media (max-width: 768px) {
+            gap: $grid-min-gap-size;
+        }
+
+        @media (min-width: 1680px) {
+            gap: $grid-max-gap-size;
+        }
+
+        :first-child {
+            grid-column: 1;
+            grid-row: span 2;
+        }
+
+        > * {
+            max-width: 100%;
+        }
     }
 }

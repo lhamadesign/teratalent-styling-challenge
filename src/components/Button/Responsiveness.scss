@@ -1,0 +1,68 @@
+@import "../../globals";
+
+// Calculating responsive font sizes and line heights
+$button-min-font-size: 9px;
+$button-max-font-size: 19px;
+$min-font-size-num: 9;
+$max-font-size-num: 19;
+$font-size-proportion: calc(($max-font-size-num - $min-font-size-num) * $screen-size-proportion);
+
+$button-min-line-height: 11px;
+$button-max-line-height: 24px;
+$min-line-height: 11;
+$max-line-height: 24;
+$line-height-proportion: calc(($max-line-height - $min-line-height) * $screen-size-proportion);
+
+$button-responsive-font-size: calc($button-min-font-size + $font-size-proportion);
+$button-responsive-line-height: calc($button-min-line-height + $line-height-proportion);
+
+// Calculating responsive button widths and heights
+$button-min-width: 141.71px;
+$button-max-width: 310px;
+$min-width-num: 141.71;
+$max-width-num: 310;
+$button-width-size-proportion: calc(($max-width-num - $min-width-num) * $screen-size-proportion);
+
+$button-responsive-width: calc($button-min-width + $button-width-size-proportion);
+
+$button-min-height: 32px;
+$button-max-height: 70px;
+$min-height-num: 32;
+$max-height-num: 70;
+$button-height-size-proportion: calc(($max-height-num - $min-height-num) * $screen-size-proportion);
+
+$button-responsive-height: calc($button-min-height + $button-height-size-proportion);
+
+// Calculating responsive icon sizes
+$icon-min-size: 10px;
+$icon-max-size: 22px;
+$icon-min-size-num: 10;
+$icon-max-size-num: 22;
+$icon-size-proportion: calc(($icon-max-size-num - $icon-min-size-num) * $screen-size-proportion);
+
+$icon-responsive-size: calc($icon-min-size + $icon-size-proportion);
+
+// Calculating responsive button paddings
+$button-min-left-padding: 12.34px;
+$button-max-left-padding: 27px;
+$min-left-padding-num: 12.34;
+$max-left-padding-num: 27;
+$button-left-padding-proportion: calc(($max-left-padding-num - $min-left-padding-num) * $screen-size-proportion);
+
+$button-min-right-padding: 8.64px;
+$button-max-right-padding: 19px;
+$min-right-padding-num: 8.64;
+$max-right-padding-num: 19;
+$button-right-padding-proportion: calc(($max-right-padding-num - $min-right-padding-num) * $screen-size-proportion);
+
+$button-responsive-right-padding: calc($button-min-right-padding + $button-right-padding-proportion);
+$button-responsive-left-padding: calc($button-min-left-padding + $button-left-padding-proportion);
+
+// Calculating responsive gap size between icon and text
+$button-grid-min-gap-size: 7.28px;
+$button-grid-max-gap-size: 18px;
+$min-gap-size-num: 7.28;
+$max-gap-size-num: 18;
+$button-grid-gap-size-proportion: calc(($max-gap-size-num - $min-gap-size-num) * $screen-size-proportion);
+
+$button-grid-responsive-gap-size: calc($button-grid-min-gap-size + $button-grid-gap-size-proportion);

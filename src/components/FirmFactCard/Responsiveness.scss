@@ -1,0 +1,31 @@
+// Calculating responsive top spacing on child elements of the card
+$child-min-top-distance: 22.86px;
+$child-max-top-distance: 50px;
+$min-top-distance-num: 22.86;
+$max-top-distance-num: 50;
+$child-top-distance-proportion: calc(($max-top-distance-num - $min-top-distance-num) * $screen-size-proportion);
+
+$card-child-responsive-top-distance: calc($child-min-top-distance + $child-top-distance-proportion);
+
+// Calculating responsive border width
+$card-min-border-width: 6.85px;
+$card-max-border-width: 15px;
+$min-border-width-num: 6.85;
+$max-border-width-num: 15;
+$card-border-width-proportion: calc(($max-border-width-num - $min-border-width-num) * $screen-size-proportion);
+
+$card-responsive-border-width: calc($card-min-border-width + $card-border-width-proportion);
+
+// Calculating responsive horizontal padding inside the card
+$card-min-horizontal-padding: 0px;
+$card-max-horizontal-padding: 12px;
+$min-horizontal-padding-num: 0;
+$max-horizontal-padding-num: 12;
+$card-horizontal-padding-proportion: calc(
+    ($max-horizontal-padding-num - $min-horizontal-padding-num) * $screen-size-proportion
+);
+
+// Important: it Has to be used AFTER the "$card-responsive-border-width" been calculated
+$card-responsive-horizontal-padding: calc(
+    ($card-min-horizontal-padding + $card-horizontal-padding-proportion) - $card-responsive-border-width
+);

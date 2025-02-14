@@ -1,18 +1,17 @@
-import Button from "../Button/Button"
+import { ReactNode } from "react"
 import "./FirmFactCard.scss"
 
-interface FirmFactCardProps {
+interface FirmFactCardProps extends React.HTMLAttributes<HTMLDivElement> {
   variant: "default" | "border"
+  children: ReactNode
 }
 
 const FirmFactCard = (props: FirmFactCardProps) => {
-  const variation = props.variant
+  const { variant, children, ...rest } = props
 
   return (
-    <div className={`card card-${variation}`}>
-      <Button variant="default" />
-      <Button variant="icon" />
-      <Button variant="default" disabled />
+    <div className={`card card-${variant}`} {...rest}>
+      {children}
     </div>
   )
 }

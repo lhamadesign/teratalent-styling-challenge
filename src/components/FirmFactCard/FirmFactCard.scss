@@ -1,8 +1,27 @@
 @import "../../globals";
+@import "./Responsiveness";
 
 .card {
     display: grid;
+    justify-items: center;
+    position: relative;
+    box-sizing: border-box;
     background-color: $color-light;
+    border: solid $card-responsive-border-width;
+    border-color: $color-light;
+    padding: 0px $card-responsive-horizontal-padding;
+
+    @media (max-width: 768px) {
+        padding: 0px $card-min-horizontal-padding;
+        border: solid $card-min-border-width;
+        border-color: $color-light;
+    }
+
+    @media (min-width: 1680px) {
+        padding: 0px $card-max-horizontal-padding;
+        border: solid $card-max-border-width;
+        border-color: $color-light;
+    }
 
     &.card-default {
         justify-content: center;
@@ -10,9 +29,38 @@
 
         &:hover {
             background-color: $color-highlight;
+            border-color: $color-highlight;
         }
     }
 
     &.card-border {
+        > * {
+            position: relative;
+            top: $card-child-responsive-top-distance;
+        }
+
+        &:hover {
+            border-color: $color-highlight;
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: 0px $card-min-horizontal-padding;
+        border: solid $card-min-border-width;
+        border-color: $color-light;
+
+        &.card-border > * {
+            top: $child-min-top-distance;
+        }
+    }
+
+    @media (min-width: 1680px) {
+        padding: 0px $card-max-horizontal-padding;
+        border: solid $card-max-border-width;
+        border-color: $color-light;
+
+        &.card-border > * {
+            top: $child-max-top-distance;
+        }
     }
 }

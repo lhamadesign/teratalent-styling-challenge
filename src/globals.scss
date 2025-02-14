@@ -3,5 +3,12 @@ $color-light: rgba(255, 255, 255, 1);
 $color-highlight: rgba(7, 192, 106, 1);
 $color-disabled: rgba(170, 170, 170, 1);
 
+$screen-width: 100vw;
+$screen-height: 100svh;
+
 $min-screen-width: 768px;
-$min-screen-height: 100svh;
+$max-screen-width: 1680px;
+$min-screen-width-num: 768;
+$max-screen-width-num: 1680;
+
+$screen-size-proportion: calc(($screen-width - $min-screen-width) / ($max-screen-width-num - $min-screen-width-num));
