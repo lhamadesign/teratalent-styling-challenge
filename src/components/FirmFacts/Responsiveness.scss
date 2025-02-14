@@ -2,6 +2,16 @@ $min-width: 768px;
 $max-width: 1680px;
 $max-height: 1014px;
 
+// Calculating responsive container paddings
+$container-min-padding: 38.86px;
+$container-max-padding: 85px;
+$container-min-padding-num: 38.86;
+$container-max-padding-num: 85;
+$container-padding-proportion: calc(
+    ($container-max-padding-num - $container-min-padding-num) * $screen-size-proportion
+);
+$container-responsive-padding: calc($container-min-padding + $container-padding-proportion);
+
 // Calculating responsive gap size between cards
 $grid-min-gap-size: 8.23px;
 $grid-max-gap-size: 18px;
@@ -27,12 +37,21 @@ $content-grid-width-proportion: calc(($max-width-num - $min-width-num) * $screen
 $content-grid-responsive-height: calc($content-grid-min-height + $content-grid-height-proportion);
 $content-grid-responsive-width: calc($content-grid-min-width + $content-grid-width-proportion);
 
+// Calculating content grid responsive margins
+$content-grid-min-top-margin: 38.13px;
+$content-grid-max-top-margin: 74px;
+$content-grid-min-top-margin-num: 38.13;
+$content-grid-max-top-margin-num: 74;
+$content-grid-top-margin-proportion: calc(
+    ($content-grid-max-top-margin-num - $content-grid-min-top-margin-num) * $screen-size-proportion
+);
+$content-grid-responsive-top-margin: calc($content-grid-min-top-margin + $content-grid-top-margin-proportion);
+
 // Calculating Close Icon responsive sizes
 $close-icon-min-size: 20.11px;
 $close-icon-max-size: 44px;
 $icon-min-size-num: 20.11;
 $icon-max-size-num: 44;
-
 $close-icon-size-proportion: calc(($icon-max-size-num - $icon-min-size-num) * $screen-size-proportion);
 
 $close-icon-responsive-size: calc($close-icon-min-size + $close-icon-size-proportion);
@@ -48,12 +67,37 @@ $close-icon-top-margin-proportion: calc(
 
 $close-icon-responsive-top-margin: calc($close-icon-min-top-margin + $close-icon-top-margin-proportion);
 
-$close-icon-min-right-margin: 28.8px;
-$close-icon-max-right-margin: 63px;
-$icon-min-right-margin-num: 28.8;
-$icon-max-right-margin-num: 63;
-$close-icon-right-margin-proportion: calc(
-    ($icon-max-right-margin-num - $icon-min-right-margin-num) * $screen-size-proportion
+// Calculating title responsive font size and line height
+$title-min-font-size: 27.43px;
+$title-max-font-size: 60px;
+$title-min-font-size-num: 27.43;
+$title-max-font-size-num: 60;
+$title-font-size-proportion: calc(($title-max-font-size-num - $title-min-font-size-num) * $screen-size-proportion);
+$title-responsive-font-size: calc($title-min-font-size + $title-font-size-proportion);
+
+$title-min-line-height: 30.17px;
+$title-max-line-height: 66px;
+$title-min-line-height-num: 30.17;
+$title-max-line-height-num: 66;
+$title-line-height-proportion: calc(
+    ($title-max-line-height-num - $title-min-line-height-num) * $screen-size-proportion
 );
 
-$close-icon-responsive-right-margin: calc($close-icon-min-right-margin + $close-icon-right-margin-proportion);
+$title-responsive-line-height: calc($title-min-line-height + $title-line-height-proportion);
+
+// Calculating responsive margins for title
+$title-min-top-margin: 20.56px;
+$title-max-top-margin: 33px;
+$min-top-margin-num: 20.56;
+$max-top-margin-num: 33;
+$title-top-margin-proportion: calc(($max-top-margin-num - $min-top-margin-num) * $screen-size-proportion);
+
+$title-responsive-top-margin: calc($title-min-top-margin + $title-top-margin-proportion);
+
+// Calculating horizontal line responsive positioning
+$title-hr-min-top-distance: 14.59px;
+$title-hr-max-top-distance: 22px;
+$hr-min-distance-num: 14.59;
+$hr-max-distance-num: 22;
+$title-hr-top-distance-proportion: calc(($hr-max-distance-num - $hr-min-distance-num) * $screen-size-proportion);
+$hr-responsive-top-distance: calc(($title-hr-min-top-distance + $title-hr-top-distance-proportion) + 100%);

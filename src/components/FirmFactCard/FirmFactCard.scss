@@ -11,6 +11,10 @@
     border-color: $color-light;
     padding: 0px $card-responsive-horizontal-padding;
 
+    transition-property: background-color, border;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+
     @media (max-width: 768px) {
         padding: 0px $card-min-horizontal-padding;
         border: solid $card-min-border-width;

@@ -3,13 +3,21 @@
 @import "./Responsiveness";
 
 .firm-facts__container {
+    @media (max-width: 768px) {
+        padding: 0px $container-min-padding $container-min-padding;
+    }
+
+    @media (min-width: 1680px) {
+        padding: 0px $container-max-padding $container-max-padding;
+    }
+
     min-width: $min-width;
     max-width: $max-width;
     height: auto;
 
     margin-top: 100px;
     background-color: rgba(45, 62, 78, 1);
-    padding-bottom: 80px;
+    padding: 0px $container-responsive-padding $container-responsive-padding;
 
     display: flex;
     flex-direction: column;
@@ -19,7 +27,8 @@
     .close-button {
         @include clean-button();
         margin-top: $close-icon-responsive-top-margin;
-        margin-right: $close-icon-responsive-right-margin;
+        position: relative;
+        transform: translateX(50%);
         align-self: flex-end;
 
         > img {
@@ -42,24 +51,52 @@
 
         @media (max-width: 768px) {
             margin-top: $close-icon-min-top-margin;
-            margin-right: $close-icon-min-right-margin;
         }
 
         @media (min-width: 1680px) {
             margin-top: $close-icon-max-top-margin;
-            margin-right: $close-icon-max-right-margin;
         }
     }
 
     .title {
+        position: relative;
+        margin-top: $title-responsive-top-margin;
         font: {
             weight: "400";
-            size: 60px; // todo: scale responsive
+            size: $title-responsive-font-size;
         }
         color: $color-light;
-        line-height: 66px;
+        line-height: $title-responsive-line-height;
         letter-spacing: 0;
-        margin: 33px 0px 0px 70px;
+
+        @media (max-width: 768px) {
+            font-size: $title-min-font-size;
+            line-height: $title-min-line-height;
+        }
+
+        @media (min-width: 1680px) {
+            font-size: $title-max-font-size;
+            line-height: $title-max-line-height;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            border-bottom: solid 1px color.adjust($color-light, $alpha: -0.8);
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            transform: translateY($hr-responsive-top-distance);
+            z-index: 1;
+
+            @media (max-width: 768px) {
+                transform: translateY(calc($title-hr-min-top-distance + 100%));
+            }
+
+            @media (min-width: 1680px) {
+                transform: translateY(calc($title-hr-max-top-distance + 100%));
+            }
+        }
     }
 
     .content-grid {
@@ -69,9 +106,7 @@
         max-height: $content-grid-max-height;
         width: $content-grid-responsive-width;
         height: $content-grid-responsive-height;
-        margin-top: 22px;
-
-        border-top: solid 1px color.adjust($color-light, $alpha: -0.8);
+        margin-top: $content-grid-responsive-top-margin;
         align-self: center;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -80,10 +115,14 @@
 
         @media (max-width: 768px) {
             gap: $grid-min-gap-size;
+
+            margin-top: $content-grid-min-top-margin;
         }
 
         @media (min-width: 1680px) {
             gap: $grid-max-gap-size;
+
+            margin-top: $content-grid-max-top-margin;
         }
 
         :first-child {

@@ -18,6 +18,9 @@
     overflow: hidden;
     box-shadow: none;
     border: solid 2px transparent;
+    transition-property: color, background-color, border;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
 
     &:disabled {
         cursor: not-allowed;
