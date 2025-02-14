@@ -1,4 +1,4 @@
-import { JSX, useState } from "react"
+import { JSX } from "react"
 import Button from "../Button/Button"
 import FirmFactCard from "../FirmFactCard/FirmFactCard"
 import "./FirmFacts.scss"
