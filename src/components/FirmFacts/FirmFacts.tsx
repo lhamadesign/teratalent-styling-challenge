@@ -10,7 +10,7 @@ const FirmFacts = () => {
     <Button variant="default" />,
     <Button variant="icon" />,
     <Button variant="icon" />,
-    <Button variant="icon" />,
+    <Button variant="icon" disabled />,
     <Button variant="icon" />,
   ]
 

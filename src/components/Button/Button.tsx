@@ -16,7 +16,7 @@ const Button = (props: ButtonProps) => {
       {variant === "icon" && (
         <div className="button__grid">
           <div className="icon">
-            <img src="../../public/search-icon.svg" />
+            <img src="/search-icon.svg" />
           </div>
           <div className="button__text">
             This is a two line button that terminates with (ellipsis)

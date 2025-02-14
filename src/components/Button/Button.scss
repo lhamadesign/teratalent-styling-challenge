@@ -111,7 +111,7 @@
     }
 }
 
-.card:hover > .button {
+.card:hover > .button:not(:disabled) {
     background-color: $color-highlight;
     border: solid 2px $color-light;
 }
